@@ -1,0 +1,24 @@
+# 代理服务配置
+[server]
+listen_addr = "0.0.0.0:8080"
+threads = 4
+
+# TCP 代理配置
+[[tcp_proxies]]
+listen_addr = "0.0.0.0:8081"
+backend_addr = "127.0.0.1:8081"
+
+# UDP 代理配置
+[[udp_proxies]]
+listen_addr = "0.0.0.0:8082"
+backend_addr = "127.0.0.1:8082"
+
+# HTTP 代理配置
+[[http_proxies]]
+listen_addr = "0.0.0.0:8083"
+backend_addr = "127.0.0.1:9093"
+
+# gRPC 动态代理配置
+[grpc_proxy]
+listen_addr = "0.0.0.0:9099"
+default_backend = "127.0.0.1:9090"
